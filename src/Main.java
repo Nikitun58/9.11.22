@@ -18,9 +18,7 @@
         System.out.println(Arrays.toString(arr));
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-            if (i== arr.length-1){
-                System.out.println("Сумма трат за месяц составила " + sum + " рублей.");}
+                System.out.println("Сумма трат за месяц составила " + IntStream.of(arr).sum() + " рублей.");
         }
         // Задача №2
         System.out.println("Задача №2");
@@ -29,17 +27,14 @@
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] <min) {
                 min = arr[i];
-            }
-        }
-        for (int i = 0; i < arr.length; i++){
-            if (arr[i] > max) {
+            } else if (arr[i] > max) {
                 max = arr[i];
             }
         }
         System.out.println("Минимальное число = " + min +" | Максимальное число = " + max + " |");
         // Задача №3
         System.out.println("Задача №3");
-        double averagesum=sum/ arr.length;
+        double averagesum= (double) IntStream.of(arr).sum()/ arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + averagesum + " рублей");
         // Задача №4
         System.out.println("Задача №4");
